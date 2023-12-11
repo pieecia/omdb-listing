@@ -1,24 +1,13 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-interface IStyledMoviesListProps {
-  isFetching: boolean;
-}
-
-export const StyledMoviesList = styled.div<IStyledMoviesListProps>`
+export const StyledMoviesList = styled.div`
   display: grid;
   gap: 1.5rem;
 
   ${({ theme }) => theme.breakpoints.up("sm")} {
     grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
   }
-
-  ${({ isFetching }) =>
-    isFetching &&
-    `
-        opacity: 0.5;
-        pointer-events: none;
-    `}
 `;
 
 export const StyledMoviesListItem = styled.div`

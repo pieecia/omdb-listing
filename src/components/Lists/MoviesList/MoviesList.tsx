@@ -9,7 +9,6 @@ import {
 
 interface IMoviesListProps {
   movies: ISearchMovies["Search"];
-  isFetching: boolean;
 }
 
 const isPoster = (poster: string) => poster !== "N/A";
@@ -17,9 +16,9 @@ const isPoster = (poster: string) => poster !== "N/A";
 const convertTitleToSlug = (title: string) =>
   title.toLowerCase().replace(/ /g, "-");
 
-const MoviesList = ({ movies, isFetching }: IMoviesListProps) => {
+const MoviesList = ({ movies }: IMoviesListProps) => {
   return (
-    <StyledMoviesList isFetching={isFetching}>
+    <StyledMoviesList>
       {movies?.map((movie) => (
         <StyledMoviesListItem key={movie.imdbID}>
           {isPoster(movie.Poster) && (

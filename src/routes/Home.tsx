@@ -10,7 +10,7 @@ const Home = () => {
     (state) => state.searchMovies
   );
 
-  const { data, isLoading, isError, isFetching } = useSearchMoviesQuery(
+  const { data, isLoading, isError } = useSearchMoviesQuery(
     {
       title,
       page,
@@ -37,7 +37,7 @@ const Home = () => {
         <div>{data.Error}</div>
       ) : (
         <>
-          <MoviesList movies={data?.Search} isFetching={isFetching} />
+          <MoviesList movies={data?.Search} />
           <Pagination
             isDisabledPreviousPage={isDisabledPreviousPage}
             isDisabledNextPage={isDisabledNextPage}
