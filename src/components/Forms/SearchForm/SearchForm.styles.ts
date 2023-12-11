@@ -9,4 +9,8 @@ export const StyledSearchForm = styled.form`
   margin-bottom: 2rem;
   gap: 0.5rem;
   box-sizing: border-box;
+
+  ${({ theme }) => theme.breakpoints.up("sm")} {
+    flex-wrap: nowrap;
+  }
 `;

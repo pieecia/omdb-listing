@@ -7,7 +7,6 @@ export const StyledSelect = styled.select`
   border-radius: 0.5rem;
   outline: none;
   font-size: 1rem;
-  margin-bottom: 1rem;
   -webkit-appearance: none;
   background-color: ${({ theme }) => theme.colors.white};
 `;
