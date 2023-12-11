@@ -14,23 +14,31 @@ const SingleMovie = () => {
       <StyledContainer>{data?.Error ?? "Something went wrong"}</StyledContainer>
     );
 
+  const keys = [
+    "Title",
+    "Year",
+    "Rated",
+    "Released",
+    "Runtime",
+    "Genre",
+    "Director",
+    "Writer",
+    "Actors",
+    "Plot",
+    "Language",
+    "Country",
+    "Awards",
+    "Metascore",
+    "imdbRating",
+  ] as const;
+
   return (
     <StyledContainer>
-      <StyledText>Title: {data?.Title}</StyledText>
-      <StyledText>Year: {data?.Year}</StyledText>
-      <StyledText>Rated: {data?.Rated}</StyledText>
-      <StyledText>Released: {data?.Released}</StyledText>
-      <StyledText>Runtime: {data?.Runtime}</StyledText>
-      <StyledText>Genre: {data?.Genre}</StyledText>
-      <StyledText>Director: {data?.Director}</StyledText>
-      <StyledText>Writer: {data?.Writer}</StyledText>
-      <StyledText>Actors: {data?.Actors}</StyledText>
-      <StyledText>Plot: {data?.Plot}</StyledText>
-      <StyledText>Language: {data?.Language}</StyledText>
-      <StyledText>Country: {data?.Country}</StyledText>
-      <StyledText>Awards: {data?.Awards}</StyledText>
-      <StyledText>Metascore: {data?.Metascore}</StyledText>
-      <StyledText>imdbRating: {data?.imdbRating} / 10</StyledText>
+      {keys.map((key) => (
+        <StyledText key={key}>
+          {key}: {data?.[key]}
+        </StyledText>
+      ))}
     </StyledContainer>
   );
 };
