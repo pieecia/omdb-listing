@@ -7,8 +7,11 @@ interface IStyledMoviesListProps {
 
 export const StyledMoviesList = styled.div<IStyledMoviesListProps>`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
   gap: 1.5rem;
+
+  ${({ theme }) => theme.breakpoints.up("sm")} {
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  }
 
   ${({ isFetching }) =>
     isFetching &&
@@ -25,10 +28,11 @@ export const StyledMoviesListItem = styled.div`
   justify-content: center;
   padding: 1rem;
   gap: 1rem;
-  border: 1px solid #e0e0e0;
+  border: 1px solid ${({ theme }) => theme.colors.gray};
   border-radius: 0.5rem;
   transition: all 0.2s ease-in-out;
   cursor: pointer;
+  box-sizing: border-box;
 
   &:hover {
     transform: scale(1.05);
@@ -40,12 +44,12 @@ export const StyledMoviesListTitle = styled.h2`
   text-align: center;
   margin: 0;
   text-decoration: none;
-  color: #000;
+  color: ${({ theme }) => theme.colors.black};
 `;
 
 export const StyledMoviesListTitleLink = styled(Link)`
   text-decoration: none;
-  color: #000;
+  color: ${({ theme }) => theme.colors.black};
 `;
 
 export const StyledMoviesListImage = styled.img`

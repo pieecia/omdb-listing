@@ -11,11 +11,11 @@ export const StyledPagination = styled.div`
 
 export const StyledPaginationButton = styled.button`
   padding: 0.5rem;
-  border: 1px solid #ccc;
+  border: 1px solid ${({ theme }) => theme.colors.gray};
   border-radius: 0.5rem;
   outline: none;
   font-size: 1rem;
-  background-color: #fff;
+  background-color: ${({ theme }) => theme.colors.white};
   cursor: pointer;
   display: flex;
   justify-content: center;
@@ -23,6 +23,6 @@ export const StyledPaginationButton = styled.button`
   gap: 0.5rem;
 
   &:hover {
-    background-color: #ccc;
+    background-color: ${({ theme }) => theme.colors.gray};
   }
 `;

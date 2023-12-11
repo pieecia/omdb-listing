@@ -15,4 +15,5 @@ export const StyledLogo = styled(Link)`
   margin: 0;
   text-decoration: none;
   color: #000;
+  font-family: ${({ theme }) => theme.fonts.body};
 `;
