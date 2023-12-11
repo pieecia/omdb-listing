@@ -15,7 +15,7 @@ import { ChangeEvent } from "react";
 const SearchForm = () => {
   const dispatch = useAppDispatch();
 
-  const { title, year } = useAppSelector((state) => state.searchMovies);
+  const { title, year, type } = useAppSelector((state) => state.searchMovies);
 
   const handleTitleChange = (e: ChangeEvent<HTMLInputElement>) => {
     dispatch(setSearchMoviesTitle(e.target.value));
@@ -47,7 +47,7 @@ const SearchForm = () => {
         step={1}
         onChange={handleYearChange}
       />
-      <StyledSelect onChange={handleTypeChange}>
+      <StyledSelect value={type} onChange={handleTypeChange}>
         <option value={""}>All</option>
         <option value={"movie"}>Movie</option>
         <option value={"series"}>Series</option>
